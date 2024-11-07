@@ -1,0 +1,6 @@
+<div class="w-full px-16 py-12 max-sm:p-4">
+    <h1 class="text-3xl font-bold mb-4">Restaurants in {{ category_name }}</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <app-restaurant-card *ngFor="let restaurant of restaurants" [restaurant_data]="restaurant"></app-restaurant-card>
+    </div>
+  </div>

@@ -13,14 +13,23 @@
     <div class="relative">
       <div class=" flex gap-2 overflow-x-scroll hide-scrollbar bg-white" #scrollContainer>
         <div *ngFor="let category of categories; let i = index">
-          <img class="min-w-40 min-h-40 max-md:min-w-32 max-md:min-h-32" [src]="category.img">
+          @if(i < 3){
+          <a class="cursor-pointer" [routerLink]="['category', category.name]" routerLinkActive="router-link-active" ><img class="min-w-40 min-h-40 max-md:min-w-32 max-md:min-h-32" [src]="category.img"></a>
+          } @else {
+            <a class="cursor-not-allowed" routerLinkActive="router-link-active" ><img class="min-w-40 min-h-40 max-md:min-w-32 max-md:min-h-32" [src]="category.img"></a>
+          }
         </div>
       </div>
     </div>
   </div>
 
   <div class="mt-24 max-md:mt-12">
-    <p class="text-2xl max-md:text-lg font-bold">Restaurants with online food delivery in Mumbai</p>
+    <p class="text-2xl max-md:text-lg font-bold my-4">Restaurants with online food delivery in Mumbai</p>
+    <div class="grid grid-cols-4 gap-x-3 gap-y-8 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1">
+      @for(restaurant of restaurant_data; track $index){
+      <app-restaurant-card [restaurant_data]="restaurant"></app-restaurant-card>
+      }
+    </div>
   </div>
 
 </div>
