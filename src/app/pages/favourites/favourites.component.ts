@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FoodItem, MenuCategory, Restaurant } from '../../interfaces/restaurant.interface';
 import { FavService } from '../../services/fav/fav.service';
 import { RestaurantService } from '../../services/restaurant/restaurant.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-favourites',
@@ -18,7 +18,7 @@ export class FavouritesComponent {
   menu_list!: MenuCategory[];
 
   constructor(private restaurantService: RestaurantService
-    , private favService: FavService) { }
+    , private favService: FavService, private router: Router) { }
 
   ngOnInit(): void {
     this.favorites = this.favService.loadFavorites();
@@ -46,5 +46,9 @@ export class FavouritesComponent {
   isFavorite(item: FoodItem, restaurant: string): boolean {
     this.restaurant_data = this.restaurantService.getMenuList(restaurant);
     return this.favService.isFavorite(item, this.restaurant_data);
+  }
+
+  navigateToRestaurant(restaurantName: string): void {
+    this.router.navigate(['/restaurant', restaurantName]);
   }
 }

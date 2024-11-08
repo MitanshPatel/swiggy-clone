@@ -71,7 +71,7 @@
                 <span class="bg-white text-green-500 text-sm font-semibold px-4 py-1">{{ item.count }}</span>
                 <button (click)="incrementCount(i, j)" class="bg-white text-green-500 text-sm font-semibold px-2 py-1 rounded-r">+</button>
               </div>
-              <button class="text-green-500 bg-white text-sm font-semibold mt-2">
+              <button (click)="addToCart(i, j)" class="text-green-500 bg-white text-sm font-semibold mt-2">
                 ADD
               </button>
             </div>

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MenuCategory, Restaurant, FoodItem } from '../../interfaces/restaurant.interface';
 import { RestaurantService } from '../../services/restaurant/restaurant.service';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { CartService } from '../../services/cart/cart.service';
 import { FavService } from '../../services/fav/fav.service';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-menu',
@@ -21,6 +22,7 @@ export class MenuComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private restaurantService: RestaurantService,
+    private cartService: CartService,
     private favService: FavService
   ) {}
 
@@ -50,6 +52,13 @@ export class MenuComponent implements OnInit {
     const item = this.menu_list[categoryIndex]?.food_items[itemIndex];
     if (item && item.count! > 0) {
       item.count!--;
+    }
+  }
+
+  addToCart(categoryIndex: number, itemIndex: number): void {
+    const item = this.menu_list[categoryIndex]?.food_items[itemIndex];
+    if (item && item.count! > 0) {
+      this.cartService.addToCart(this.restaurant_data, item);
     }
   }
 
