@@ -1,27 +1,93 @@
-# SwiggyClone
+# Swiggy Clone
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+This project is a clone of the Swiggy food delivery application. It includes features such as user authentication, viewing and managing the cart, placing orders, and viewing order history.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- User Authentication (Sign Up, Log In, Log Out)
+- View and manage cart items
+- Place orders
+- View order history
+- Responsive design
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository:
 
-## Running unit tests
+   ```bash
+   git clone https://github.com/your-username/swiggy-clone.git
+   cd swiggy-clone
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Install the dependencies:
+npm install
 
-## Further help
+Run the application:ng serve
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Open your browser and navigate to http://localhost:4200.
+
+Usage
+User Authentication
+Sign Up: Create a new account by providing your name, email, and password.
+Log In: Log in to your account using your email and password.
+Log Out: Log out of your account.
+Cart Management
+Add to Cart: Add items to your cart from the menu.
+Update Cart: Increment or decrement the quantity of items in your cart.
+View Cart: View the items in your cart and the total price.
+Order Placement
+Place Order: Place an order with the items in your cart.
+Order History: View your past orders.
+Project Structure
+
+src/
+├── app/
+│   ├── components/
+│   │   ├── navbar/
+│   │   │   ├── navbar.component.html
+│   │   │   ├── [navbar.component.ts](http://_vscodecontentref_/1)
+│   │   │   ├── navbar.component.css
+│   ├── pages/
+│   │   ├── cart-details/
+│   │   │   ├── cart-details.component.html
+│   │   │   ├── cart-details.component.ts
+│   │   │   ├── cart-details.component.css
+│   │   ├── order-history/
+│   │   │   ├── order-history.component.html
+│   │   │   ├── order-history.component.ts
+│   │   │   ├── order-history.component.css
+│   │   ├── favourites/
+│   │   │   ├── favourites.component.html
+│   │   │   ├── favourites.component.ts
+│   │   │   ├── favourites.component.css
+│   ├── services/
+│   │   ├── login/
+│   │   │   ├── login.service.ts
+│   │   ├── cart/
+│   │   │   ├── cart.service.ts
+│   │   ├── order/
+│   │   │   ├── order.service.ts
+│   │   ├── fav/
+│   │   │   ├── fav.service.ts
+│   ├── interfaces/
+│   │   ├── restaurant.interface.ts
+│   ├── app.module.ts
+│   ├── app.component.html
+│   ├── app.component.ts
+│   ├── app.component.css
+├── assets/
+├── environments/
+├── index.html
+├── main.ts
+
+
