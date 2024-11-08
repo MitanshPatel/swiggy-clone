@@ -89,7 +89,7 @@ export class NavbarComponent implements OnInit {
         if (user) {
           this.username = user.name;
           this.loginService.logIn(user);
-          this.hideLogin();
+          this.hideSignUpModal();
         } else {
           alert('Invalid email or password');
         }
